@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الأول</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f6f9; padding: 40px 15px; }
+        .card { background: white; max-width: 350px; margin: auto; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: #333; margin-bottom: 10px; }
+        p { color: #666; font-size: 14px; }
+        input { width: 85%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; text-align: center; outline: none; }
+        button { background-color: #007bff; color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; width: 90%; }
+        #result { margin-top: 20px; font-weight: bold; color: #28a745; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>مرحباً بكِ في موقعي الأول! 🎉</h2>
+        <p>ادخلي رقماً لتقومي بحساب ضعفه تلقائياً:</p>
+        
+        <input type="number" id="numInput" placeholder="اكتبي رقماً هنا...">
+        <button onclick="calculate()">احسب النتيجة</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            let val = document.getElementById('numInput').value;
+            if (val === '') {
+                document.getElementById('result').style.color = '#dc3545';
+                document.getElementById('result').innerText = "يرجى كتابة رقم أولاً!";
+                return;
+            }
+            document.getElementById('result').style.color = '#28a745';
+            document.getElementById('result').innerText = "ضعف الرقم هو: " + (val * 2);
+        }
+    </script>
+
+</body>
+</html>
